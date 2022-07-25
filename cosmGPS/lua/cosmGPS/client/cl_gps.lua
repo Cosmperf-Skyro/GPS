@@ -9,8 +9,8 @@ function gpsGO(position)
     hook.Add("HUDPaint", "cosmGPS:HUD", function()
 
         local icon = Material("icons/point.png")
-        player_pos = LocalPlayer():GetPos()
-        dist = math.Distance(position.x, position.y, player_pos.x, player_pos.y) / 100
+        local player_pos = LocalPlayer():GetPos()
+        local dist = math.Distance(position.x, position.y, player_pos.x, player_pos.y) / 100
         if (player_pos:DistToSqr(position) < 500^2) then
             hook.Remove( "HUDPaint", "cosmGPS:HUD" )
             surface.PlaySound("gps/arrive.wav")
