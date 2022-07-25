@@ -4,11 +4,11 @@ net.Receive("cosmGPS:Emit", function()
     gpsGO(position)
 end)
 
+        local icon = Material("icons/point.png")
 
 function gpsGO(position)
     hook.Add("HUDPaint", "cosmGPS:HUD", function()
 
-        local icon = Material("icons/point.png")
         local player_pos = LocalPlayer():GetPos()
         local dist = math.Distance(position.x, position.y, player_pos.x, player_pos.y) / 100
         if (player_pos:DistToSqr(position) < 500^2) then
