@@ -1,5 +1,5 @@
 net.Receive("cosmGPS:Emit", function()
-    position = net.ReadVector()
+    local position = net.ReadVector()
 
     gpsGO(position)
 end)
